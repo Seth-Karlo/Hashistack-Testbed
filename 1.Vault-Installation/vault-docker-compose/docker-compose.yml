@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  vault-server1:
+    image: hashicorp/vault:1.9.2
+    container_name: vault-server1
+    restart: always
+    volumes:
+      - ./vault-config.json:/vault/config/vault-config.json:ro
+      - ./certs/:/vault/config/certs/:ro
+    cap_add:
+      - IPC_LOCK
+    networks:
+      - hashistack
+    ports:
+      - "8200:8200"
+    command:
+      - "server"
+
+networks:
+  hashistack:
+    driver: bridge
+

@@ -1,0 +1,12 @@
+listener "tcp" {
+  address = "0.0.0.0:8200"
+  tls_cert_file = "/vault/config/certs/vault.local.labs.andyrepton.com.crt"
+  tls_key_file = "/vault/config/certs/vault.local.labs.andyrepton.com.pem"
+}
+
+storage "file" {
+  path = "/vault/file"
+}
+
+disable_mlock = true
+ui = true

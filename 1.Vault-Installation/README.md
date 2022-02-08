@@ -2,6 +2,7 @@
 
 I elected to deploy Vault first, because then I can use it to generate the certificates for the other systems that should use TLS in an easy way. Of course, for the initial Vault this means generating a self signed CA that I'll then import.
 
+Please remember to add the relevant hostnames to your local `hosts` file as described in the README at the root of this repository.
 
 ### Generating the self signed key/cert pair for Vault
 
@@ -57,7 +58,7 @@ Key                Value
 ---                -----
 Seal Type          shamir
 Initialized        true
-Sealed             true
+Sealed             true <- :thumbsdown:
 Total Shares       5
 Threshold          3
 Unseal Progress    1/3
@@ -70,7 +71,7 @@ Key                Value
 ---                -----
 Seal Type          shamir
 Initialized        true
-Sealed             true
+Sealed             true <- :thumbsdown:
 Total Shares       5
 Threshold          3
 Unseal Progress    2/3
@@ -83,7 +84,7 @@ Key             Value
 ---             -----
 Seal Type       shamir
 Initialized     true
-Sealed          false
+Sealed          false <- :thumbsup:
 Total Shares    5
 Threshold       3
 Version         1.9.2
